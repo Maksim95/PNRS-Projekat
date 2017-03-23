@@ -49,7 +49,7 @@ public class NoviZadActivity extends AppCompatActivity {
         dodaj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(ime.getText().toString().trim().length()==0 && opis.getText().toString().trim().length()==0) {
+                if(!(ime.getText().toString().trim().length()==0 && opis.getText().toString().trim().length()==0)) {
                     startActivity(mainActivityIntent);
                 }else
                     Toast.makeText(NoviZadActivity.this,R.string.toast,Toast.LENGTH_SHORT).show();
