@@ -28,6 +28,7 @@ public class NoviZadActivity extends AppCompatActivity {
         crveni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(NoviZadActivity.this,R.string.priority1,Toast.LENGTH_SHORT).show();
                 zuti.setEnabled(false);
                 zeleni.setEnabled(false);
             }
@@ -35,6 +36,7 @@ public class NoviZadActivity extends AppCompatActivity {
         zuti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(NoviZadActivity.this,R.string.priority2,Toast.LENGTH_SHORT).show();
                 crveni.setEnabled(false);
                 zeleni.setEnabled(false);
             }
@@ -42,6 +44,7 @@ public class NoviZadActivity extends AppCompatActivity {
         zeleni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(NoviZadActivity.this,R.string.priority3,Toast.LENGTH_SHORT).show();
                 crveni.setEnabled(false);
                 zuti.setEnabled(false);
             }
