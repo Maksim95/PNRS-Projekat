@@ -8,4 +8,7 @@
     <string name="dodaj">Dodaj</string>
     <string name="izlaz">Odkazi</string>
     <string name="toast">Niste popunili sva polja</string>
+    <string name="priority1">Visok prioritet zadatka</string>
+    <string name="priority2">Srednji prioritet zadatka</string>
+    <string name="priority3">Nizak prioritet zadatka</string>
 </resources>
