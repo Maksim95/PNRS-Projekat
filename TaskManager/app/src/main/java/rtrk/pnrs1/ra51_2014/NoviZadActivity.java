@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,18 +35,22 @@ public class NoviZadActivity extends AppCompatActivity {
         Button izlaz = (Button) findViewById(R.id.izlaz);
         final EditText opis = (EditText) findViewById(R.id.opis);
         final EditText ime = (EditText) findViewById(R.id.ime);
+        final DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker2);
         final Intent mainActivityIntent = new Intent(this, MainActivity.class);
+        datePicker.setMinDate(System.currentTimeMillis()-1000);
 
 
         crveni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(NoviZadActivity.this,R.string.priority1,Toast.LENGTH_SHORT).show();
-                zuti.setEnabled(false);
-                zeleni.setEnabled(false);
-
+                zuti.setEnabled(true);
+                zeleni.setEnabled(true);
+                crveni.setEnabled(false);
+                crveni.setBackgroundColor(getResources().getColor(R.color.zuti));
                 zuti.setBackgroundColor(getResources().getColor(R.color.zuti));
                 zeleni.setBackgroundColor(getResources().getColor(R.color.zeleni));
+                crveni.setBackgroundColor(getResources().getColor(R.color.crvena));
 
             }
         });
@@ -53,22 +58,26 @@ public class NoviZadActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Toast.makeText(NoviZadActivity.this,R.string.priority2,Toast.LENGTH_SHORT).show();
-                crveni.setEnabled(false);
-                zeleni.setEnabled(false);
+                crveni.setEnabled(true);
+                zeleni.setEnabled(true);
+                zuti.setEnabled(false);
 
                 crveni.setBackgroundColor(getResources().getColor(R.color.crveni));
                 zeleni.setBackgroundColor(getResources().getColor(R.color.zeleni));
+                zuti.setBackgroundColor(getResources().getColor(R.color.zuta));
             }
         });
         zeleni.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(NoviZadActivity.this,R.string.priority3,Toast.LENGTH_SHORT).show();
-                crveni.setEnabled(false);
-                zuti.setEnabled(false);
+                crveni.setEnabled(true);
+                zuti.setEnabled(true);
+                zeleni.setEnabled(false);
 
                 zuti.setBackgroundColor(getResources().getColor(R.color.zuti));
                 crveni.setBackgroundColor(getResources().getColor(R.color.crveni));
+                zeleni.setBackgroundColor(getResources().getColor(R.color.zelena));
             }
         });
         dodaj.setOnClickListener(new View.OnClickListener() {
