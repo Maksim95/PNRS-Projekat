@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -17,11 +18,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 public class NoviZadActivity extends AppCompatActivity {
 
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
+   private boolean enableDodaj;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +35,9 @@ public class NoviZadActivity extends AppCompatActivity {
         final EditText ime = (EditText) findViewById(R.id.ime);
         final DatePicker datePicker = (DatePicker) findViewById(R.id.datePicker2);
         final Intent mainActivityIntent = new Intent(this, MainActivity.class);
+        enableDodaj=false;
         datePicker.setMinDate(System.currentTimeMillis()-1000);
+
 
 
         crveni.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +51,7 @@ public class NoviZadActivity extends AppCompatActivity {
                 zuti.setBackgroundColor(getResources().getColor(R.color.zuti));
                 zeleni.setBackgroundColor(getResources().getColor(R.color.zeleni));
                 crveni.setBackgroundColor(getResources().getColor(R.color.crvena));
+                enableDodaj=true;
 
             }
         });
@@ -65,6 +66,7 @@ public class NoviZadActivity extends AppCompatActivity {
                 crveni.setBackgroundColor(getResources().getColor(R.color.crveni));
                 zeleni.setBackgroundColor(getResources().getColor(R.color.zeleni));
                 zuti.setBackgroundColor(getResources().getColor(R.color.zuta));
+                enableDodaj=true;
             }
         });
         zeleni.setOnClickListener(new View.OnClickListener() {
@@ -78,12 +80,13 @@ public class NoviZadActivity extends AppCompatActivity {
                 zuti.setBackgroundColor(getResources().getColor(R.color.zuti));
                 crveni.setBackgroundColor(getResources().getColor(R.color.crveni));
                 zeleni.setBackgroundColor(getResources().getColor(R.color.zelena));
+                enableDodaj=true;
             }
         });
         dodaj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!(ime.getText().toString().trim().length() == 0 && opis.getText().toString().trim().length() == 0)) {
+                if (!(ime.getText().toString().trim().length() == 0 && opis.getText().toString().trim().length() == 0 )&& enableDodaj) {
                     startActivity(mainActivityIntent);
                 } else
                     Toast.makeText(NoviZadActivity.this, R.string.toast, Toast.LENGTH_SHORT).show();
@@ -96,8 +99,7 @@ public class NoviZadActivity extends AppCompatActivity {
             }
         });
 
-       // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
+
 
     }
 
