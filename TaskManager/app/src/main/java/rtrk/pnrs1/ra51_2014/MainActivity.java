@@ -18,6 +18,15 @@ public class MainActivity extends AppCompatActivity {
         Button nz = (Button) findViewById(R.id.button);
         Button stat = (Button) findViewById(R.id.button2);
         ListView lv = (ListView)findViewById(R.id.list);
+        lv.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                nzIntent.putExtra(R.string.Osvezi,R.string.Osvezi);
+                nzIntent.putExtra(R.string.Obrisi,R.string.Obrisi);
+                startActivity(nzIntent);
+                return false;
+            }
+        });
 
         stat.setOnClickListener(new View.OnClickListener() {
             @Override

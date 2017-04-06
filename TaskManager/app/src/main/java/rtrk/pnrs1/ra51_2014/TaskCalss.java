@@ -17,12 +17,15 @@ public class TaskCalss implements Serializable {
     private TimePicker vreme;
     private priority proritet;
 
+
+
     public TaskCalss(String ime, priority proritet, TimePicker vreme, DatePicker datum, String opis) {
         this.ime = ime;
         this.proritet = proritet;
         this.vreme = vreme;
         this.datum = datum;
         this.opis = opis;
+
     }
 
     public void setIme(String ime) {

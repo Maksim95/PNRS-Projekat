@@ -11,4 +11,8 @@
     <string name="priority1">Visok prioritet zadatka</string>
     <string name="priority2">Srednji prioritet zadatka</string>
     <string name="priority3">Nizak prioritet zadatka</string>
+    <string name="datum">Datum</string>
+    <string name="naziv">Naziv Zadatka</string>
+    <string name="Obrisi">Obrisi</string>
+    <string name="Osvezi">Osvezi</string>
 </resources>
